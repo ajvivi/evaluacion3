@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entre Chicas · Prueba tu look</title>
+<link rel="stylesheet" href="{% static 'entrechicas/css/espejo.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#6a4c9c">
+<link rel="stylesheet" href="{% static 'entrechicas/css/probadores.css' %}"><link rel="stylesheet" href="{% static 'entrechicas/css/tema.css' %}"><script src="{% static 'entrechicas/js/tema.js' %}"></script><link rel="stylesheet" href="{% static 'entrechicas/css/tienda.css' %}"></head>
+<body class="probador"><main hidden><div class="studio-top"><a class="back" href="/index.html">← Volver al salón</a><span class="studio-name">Entre Chicas</span></div><nav class="studio-nav" aria-label="Probadores de belleza"><a href="/espejo.html" aria-current="page">Labiales</a><a href="/unas.html">Uñas en vivo</a><a href="/peinados.html">Color de cabello</a><a href="/unas-foto.html">Uñas con foto</a></nav><header><div class="brand">Entre Chicas · Probador virtual</div><h1>Encuentra tu próximo tono.</h1><p>Prueba un color de labios en vivo. Tú eliges la intensidad.</p></header>
+<div class="layout"><section aria-label="Vista de la cámara">
+<div class="actions"><button class="primary" id="start">Activar cámara</button><button id="stop" disabled>Apagar cámara</button></div><div class="camera"><video id="video" autoplay muted playsinline></video><canvas id="canvas" width="640" height="480" aria-label="Tu imagen con el tono de labial seleccionado"></canvas><div class="empty" id="empty"><strong>Tu look empieza aquí</strong>Activa la cámara y mira de frente.<br>Busca un lugar con buena iluminación.</div></div>
+
+<p id="status" class="status" role="status" aria-live="polite">La cámara está apagada.</p>
+</section><aside class="panel"><h2>Un toque de color</h2><p id="toneName">Tono: Rosa</p><div class="tones" aria-label="Tonos de labial">
+<button class="tone" style="--tone:#bd416d" data-color="#bd416d" data-name="Rosa" aria-label="Rosa" aria-pressed="true"></button>
+<button class="tone" style="--tone:#b62038" data-color="#b62038" data-name="Rojo" aria-label="Rojo" aria-pressed="false"></button>
+<button class="tone" style="--tone:#d66b63" data-color="#d66b63" data-name="Coral" aria-label="Coral" aria-pressed="false"></button>
+<button class="tone" style="--tone:#945d58" data-color="#945d58" data-name="Nude" aria-label="Nude" aria-pressed="false"></button>
+<button class="tone" style="--tone:#702f52" data-color="#702f52" data-name="Ciruela" aria-label="Ciruela" aria-pressed="false"></button></div>
+<label for="intensity">Intensidad: <output id="amount">45%</output></label><input id="intensity" type="range" min="0" max="85" value="45">
+<button id="compare" class="compare" aria-pressed="false">Ver sin maquillaje</button>
+<details><summary>Consejos y privacidad</summary><p class="note">Simulación orientativa: el tono cambia según la luz, tu color natural y la pantalla. Funciona mejor mirando de frente y sin tapar la boca.</p>
+<p class="note">Este prototipo procesa el video en tu navegador. No graba ni sube imágenes. Necesita internet para descargar MediaPipe y su modelo.</p></details></aside></div>
+
+</main>
+<script type="text/plain" data-probador-src="{% static 'entrechicas/js/espejo.js' %}"></script><script type="module" src="{% static 'entrechicas/js/salon-contexto.js' %}"></script>
+<script type="module" src="{% static 'entrechicas/js/acceso-probadores.js' %}"></script></body></html>
