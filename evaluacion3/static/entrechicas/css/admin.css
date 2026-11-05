@@ -1,0 +1,100 @@
+/* Identidad visual de Entre Chicas para el administrador de Django. */
+:root, html[data-theme="light"], html[data-theme="dark"] {
+    --primary: #76528b;
+    --secondary: #624276;
+    --accent: #fff;
+    --header-color: #fff;
+    --header-branding-color: #fff;
+    --header-bg: #624276;
+    --header-link-color: #fff;
+    --button-bg: #76528b;
+    --button-hover-bg: #624276;
+    --default-button-bg: #76528b;
+    --default-button-hover-bg: #624276;
+}
+html[data-theme="light"] { --link-fg: #69417f; --link-selected-fg: #814467; }
+html[data-theme="dark"] { --link-fg: #dec0f0; --link-selected-fg: #f2d9e9; }
+@media (prefers-color-scheme: dark) {
+    html[data-theme="auto"] { --link-fg: #dec0f0; --link-selected-fg: #f2d9e9; }
+}
+.marca-entrechicas a {
+    color: #fff !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.marca-entrechicas span {
+    display: block;
+    margin-top: 8px;
+    color: #f4e7f3;
+    font-size: 13px;
+}
+body.login {
+    background: linear-gradient(135deg, #f9edf2, #eee5f5);
+    color: #44364c;
+    --body-fg: #44364c;
+    --body-bg: #fff;
+    --error-fg: #a32342;
+    --border-color: #ddccdf;
+    --link-fg: #69417f;
+    --link-selected-fg: #814467;
+}
+body.login #container {
+    box-sizing: border-box;
+    width: min(420px, calc(100% - 32px));
+    min-width: 0;
+    margin: 10vh auto;
+    background: #fff;
+    border: 1px solid #eaddec;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(90, 55, 110, .15);
+}
+body.login #header {
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    padding: 28px 20px;
+    background: linear-gradient(120deg, #76528b, #a16a8b);
+    text-align: center;
+}
+body.login #content { padding: 28px; }
+body.login .form-row label { color: #53415c; font-weight: 600; }
+body.login .form-row input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: #44364c;
+    background: #fffafd;
+    border: 1px solid #ddccdf;
+    border-radius: 10px;
+}
+body.login .form-row input:focus {
+    outline: 2px solid #a16a8b;
+    outline-offset: 2px;
+}
+body.login .submit-row { padding: 20px 0 0; background: transparent; }
+body.login .submit-row input {
+    width: 100%;
+    min-height: 44px;
+    padding: 14px;
+    background: #76528b;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+body.login .submit-row input:hover { background: #624276; }
+body.login .theme-toggle { display: none; }
+body.login .errornote, body.login .errorlist {
+    color: #8c1935;
+    background: #fff1f4;
+    border-color: #c35870;
+}
+@media (max-width: 480px) {
+    body.login #container { margin: 5vh auto; }
+    body.login #content { padding: 22px; }
+    .marca-entrechicas a { font-size: 28px; }
+}

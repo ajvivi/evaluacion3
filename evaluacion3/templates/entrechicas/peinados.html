@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#6a4c9c"><title>Entre Chicas · Color de cabello</title>
+<link rel="stylesheet" href="{% static 'entrechicas/css/espejo.css' %}"><link rel="stylesheet" href="{% static 'entrechicas/css/probadores.css' %}"><link rel="stylesheet" href="{% static 'entrechicas/css/tienda.css' %}"><link rel="stylesheet" href="{% static 'entrechicas/css/tema.css' %}"><link rel="stylesheet" href="{% static 'entrechicas/css/color-cabello.css' %}"><script src="{% static 'entrechicas/js/tema.js' %}"></script></head>
+<body class="probador"><main hidden>
+<div class="studio-top"><a class="back" href="/index.html">← Volver al salón</a><span class="studio-name">Entre Chicas</span></div>
+<nav class="studio-nav" aria-label="Probadores de belleza"><a href="/espejo.html">Labiales</a><a href="/unas.html">Uñas en vivo</a><a href="/peinados.html" aria-current="page">Color de cabello</a><a href="/unas-foto.html">Uñas con foto</a></nav>
+<header><div class="brand">Entre Chicas · Color de cabello</div><h1>Tu cabello. Un nuevo color.</h1><p>Conserva tu peinado y explora otro tono, en vivo.</p></header>
+<div class="layout"><section aria-label="Probador de color de cabello">
+<div class="actions"><button id="start" class="primary">Activar cámara</button><button id="stop" disabled>Apagar cámara</button></div>
+<div class="hair-camera"><video id="video" muted autoplay playsinline aria-hidden="true"></video><canvas id="canvas" width="640" height="480" aria-label="Vista de cámara con color de cabello simulado"></canvas><div class="hair-empty" id="empty"><strong>Encuentra tu próximo tono</strong><span>Activa la cámara y deja todo tu cabello dentro del encuadre.</span></div></div>
+<p id="status" role="status" aria-live="polite">La cámara está apagada.</p><p class="note">Usa luz frontal y un fondo que contraste con tu cabello. Prueba con una sola persona.</p>
+</section><aside class="panel"><h2>Elige tu tono</h2>
+<label for="hair-color">Color del cabello</label><select id="hair-color"><option value="#70442e">Castaño cálido</option><option value="#b8552e" selected>Cobrizo</option><option value="#752440">Borgoña</option><option value="#843ea4">Violeta</option><option value="#b53a79">Rosa</option><option value="#24232b">Negro suave</option><option value="#b59151">Rubio dorado · aproximado</option></select>
+<label for="intensity">Intensidad: <output id="intensity-value">65%</output></label><input id="intensity" type="range" min="0" max="100" value="65">
+<button id="compare" class="compare" type="button" aria-pressed="false">Ver color original</button><button id="reset" class="compare" type="button">Restablecer ajustes</button>
+<details><summary>Mejorar los bordes</summary><label for="threshold">Precisión: <output id="threshold-value">65%</output></label><input id="threshold" type="range" min="50" max="90" value="65"><p class="note">Aumenta la precisión si el color invade el fondo. Puede dejar algunos mechones sin teñir.</p><label class="hair-check"><input id="show-mask" type="checkbox"> Mostrar zona detectada</label></details>
+<p class="note">Simulación orientativa. No predice el resultado de una tintura; aclarar cabello oscuro es especialmente aproximado.</p>
+<details><summary>Cámara y privacidad</summary><p class="note">Las imágenes se procesan en este dispositivo. Este probador no las graba ni las envía al servidor. Necesita internet para cargar el detector de MediaPipe. La cámara se apaga al salir de esta página o cambiar de pestaña.</p></details>
+</aside></div></main>
+<script type="text/plain" data-probador-src="{% static 'entrechicas/js/color-cabello.js' %}"></script><script type="module" src="{% static 'entrechicas/js/salon-contexto.js' %}"></script><script type="module" src="{% static 'entrechicas/js/acceso-probadores.js' %}"></script></body></html>

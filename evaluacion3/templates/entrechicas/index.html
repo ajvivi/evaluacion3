@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entre Chicas - Salón de Belleza</title>
+  <link rel="stylesheet" href="{% static 'entrechicas/css/style.css' %}?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <!-- 🌟 CONEXIÓN A LA APP MÓVIL (PWA) 🌟 -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#6a4c9c">
+
+  <link rel="stylesheet" href="{% static 'entrechicas/css/index-extra-1.css' %}">
+  <link rel="stylesheet" href="{% static 'entrechicas/css/servicios-foto.css' %}">
+  <link rel="stylesheet" href="{% static 'entrechicas/css/planes.css' %}">
+  <link rel="stylesheet" href="{% static 'entrechicas/css/inicio-ordenado.css' %}">
+<link rel="stylesheet" href="{% static 'entrechicas/css/tema.css' %}"><script src="{% static 'entrechicas/js/tema.js' %}"></script><link rel="stylesheet" href="{% static 'entrechicas/css/tienda.css' %}"></head>
+<body>
+
+  <video id="videoFondo" class="video-fondo-pantalla" autoplay loop muted playsinline>
+    <source src="{% static 'entrechicas/assets/videos/video.mp4' %}" type="video/mp4">
+  </video>
+  
+  <div class="pantalla-fondo">
+    <main class="tarjeta-principal" id="contenedorInteractiva">
+      
+      <nav class="navegacion">
+        <div class="logo">Entre Chicas</div>
+        <ul class="enlaces">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a class="nav-registro" href="/admin.html?registro=1">Administración</a></li>
+          <li><a href="/ayuda.html">Ayuda</a></li>
+        </ul>
+        <a href="#" id="btnAbrirModal" class="btn-reserva" style="text-decoration: none;">Agendar Cita</a>
+      </nav>
+
+      <div class="contenido-hero">
+        <div class="texto-izquierdo">
+          <h1 class="titulo-elegante">Despierta tu<br>belleza natural</h1>
+          <p>En <b>Entre Chicas</b> te ofrecemos una experiencia integral para tu cuidado personal. Déjate mimar por nuestras expertas.</p>
+          <a href="#servicios" class="btn-accion" style="text-decoration: none; display: inline-block;">Ver Catálogo</a>
+          <br>
+          
+
+          <!--  NUEVO: BOTÓN DEL ESPEJO MÁGICO  -->
+          <div class="contenedor-espejo-magico">
+            <a href="/espejo.html" class="btn-espejo-magico">
+               Prueba tus labiales en realidad aumentada
+            </a>
+            <a href="/unas.html" class="btn-espejo-magico" style="margin-top:12px">Prueba tus uñas</a>
+            <a href="/unas-foto.html" class="btn-espejo-magico" style="margin-top:12px">Diseña tus uñas con una foto</a>
+            <a href="/peinados.html" class="btn-espejo-magico" style="margin-top:12px">Prueba tu color de cabello</a>
+          </div>
+
+        </div>
+        
+        <div class="centro-imagen"></div>
+
+        <div class="datos-derechos">
+          <div class="dato"><h3>100%</h3><p>Atención personalizada</p></div>
+          <div class="dato"><h3>Catálogo</h3><p>Servicios de belleza</p></div>
+          <div class="dato"><h3>Premium</h3><p>Productos de alta calidad</p></div>
+        </div>
+      </div>
+      
+      <button id="btnAudio" class="btn-sonido">Activar Sonido</button>
+    </main> 
+  </div> 
+
+  <!-- ==========================================
+       🌸 SECCIÓN DE SERVICIOS
+       ========================================== -->
+  <section id="servicios" class="seccion-servicios servicios-foto">
+    <div class="tarjeta-servicios-grande tarjeta-servicios-estatica">
+      <div class="lado-foto foto-servicios-original">
+        <img src="{% static 'entrechicas/assets/imagenes/foto1.png' %}" alt="Tratamiento de cuidado de la piel" class="foto-skincare">
+      </div>
+      <div class="lado-contenido">
+        <h2 class="titulo-dentro-tarjeta titulo-elegante">Nuestros Servicios</h2><p data-nombre-salon>Entre Chicas</p>
+        <div class="planes-selector" role="group" aria-label="Tipo de servicios">
+          <button type="button" aria-pressed="true" aria-controls="servicios-clientas" data-vista="servicios-clientas">Servicios</button>
+          <button type="button" aria-pressed="false" aria-controls="tienda-clientas" data-vista="tienda-clientas">Cosméticos</button>
+          <button type="button" aria-pressed="false" aria-controls="servicios-salones" data-vista="servicios-salones">Para tu salón</button>
+        </div>
+        <div id="servicios-clientas">
+        <p>No prometemos perfección, prometemos cuidado consciente. Descubre nuestros tratamientos personalizados para resaltar la luz natural de tu piel, combinando tecnología y masajes relajantes.</p>
+        <ul id="catalogo-publico" class="lista-servicios-elegante"><li>Cargando servicios del salón…</li></ul>
+        </div>
+        <div id="tienda-clientas" hidden><div class="tienda-invitacion"><span class="tienda-etiqueta">BELLEZA PARA LLEVAR</span><h3>Tu tienda de cosméticos</h3><p>Descubre los productos publicados por este negocio, consulta sus precios y arma tu solicitud de compra.</p><a class="tienda-enlace" href="/tienda.html">Ir a la tienda →</a><p class="tienda-ayuda">Productos y compras separados de las citas. El negocio confirma disponibilidad, pago y entrega.</p></div></div><div id="servicios-salones" hidden>
+          <p class="planes-intro">Tu salón, conectado con tus clientas. Una propuesta de suscripción para gestionar reservas e incorporar experiencias virtuales con tu propia marca.</p>
+          <p class="planes-nota">Proyecto piloto · Precios propuestos en CLP, sujetos a validación. No se realizan cobros.</p>
+          <article class="plan-fila"><div><h3>Esencial</h3><p class="plan-precio">$25.000 <small>/ mes</small></p><p>Catálogo de servicios o tienda de cosméticos. Reservas y solicitudes de compra según tu modalidad.</p><span class="plan-estado">Catálogo con suscripción demo vigente</span></div><button type="button" data-plan="Esencial">Ver propuesta</button></article>
+          <article class="plan-fila plan-destacado"><div><h3>Innovación</h3><p class="plan-precio">$60.000 <small>/ mes</small></p><p>Todo lo Esencial: servicios, reservas y tienda de cosméticos + probadores de color de cabello, labiales y uñas, con suscripción vigente.</p><span class="plan-estado">RA con Innovación vigente · Simulación orientativa</span></div><button type="button" data-plan="Innovación">Ver propuesta</button></article>
+          <article class="plan-fila"><div><h3>Franquicia</h3><p class="plan-precio">A cotizar</p><p>Contrato anual e instalación. Múltiples sucursales y análisis predictivo previstos.</p><span class="plan-estado">Etapa futura</span></div><button type="button" data-plan="Franquicia">Ver alcance</button></article>
+          <p class="planes-nota">El administrador gestiona el catálogo y las reservas desde Django. La personalización visual completa y la gestión de sucursales siguen previstas. Las pruebas virtuales son orientativas.</p>
+          <a class="enlace-economia" href="/modelo-negocio.html">Explorar el modelo económico →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       🌸 SECCIÓN NOSOTROS
+       ========================================== -->
+  <section id="nosotros" class="seccion-nosotros">
+    <div class="tarjeta-servicios-grande tarjeta-nosotros-grande">
+      <div class="lado-foto">
+        <img src="{% static 'entrechicas/assets/imagenes/trabajadores.jpeg' %}" alt="Equipo Entre Chicas" class="foto-skincare">
+      </div>
+      <div class="lado-contenido">
+        <h2 class="titulo-dentro-tarjeta titulo-elegante">Sobre Nosotros</h2>
+        <p>En <strong>Entre Chicas</strong> somos un equipo apasionado por resaltar tu luz natural. Nuestro objetivo es brindarte un espacio seguro, relajante y exclusivo donde puedas desconectarte del mundo y dejarte mimar.</p>
+        <h3 class="subtitulo-seccion"> Nuestro Equipo</h3><small>Equipo de ejemplo del prototipo académico.</small>
+        <ul class="lista-texto-simple">
+          <li><b>Javier Palma</b> - Fundador y Administrador</li>
+          <li><b>Camila Valdés</b> - Estilista Principal</li>
+          <li><b>Valentina Soto</b> - Especialista en Skincare</li>
+        </ul>
+        <h3 class="subtitulo-seccion">Encuéntranos</h3>
+        <ul id="contacto-publico" class="lista-texto-simple"><li>Consulta los datos del negocio cuando termine de cargar la página.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       📝 MODAL DE RESERVAS ORIGINAL
+       ========================================== -->
+  <div id="modalReservas" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Agendar una cita">
+    <div class="modal-contenido">
+      <button type="button" class="cerrar-modal" id="btnCerrarModal" aria-label="Cerrar reservas">&times;</button>
+      <div class="contenedor-formulario">
+        <h2 class="titulo-seccion titulo-elegante">Agendar mi Cita</h2>
+        <form id="formularioReserva">
+          <div class="grupo-input"><label for="nombre">Nombre completo</label><input type="text" id="nombre" required placeholder="Ej: Camila Pérez"></div>
+          <div class="grupo-input"><label for="correo">Correo electrónico</label><input type="email" id="correo" required placeholder="tu@correo.com"></div>
+          <div class="grupo-input"><label for="telefono">Teléfono / WhatsApp</label><input type="tel" id="telefono" required placeholder="+56 9..."></div>
+          
+          <div class="grupo-input">
+            <label for="servicio">Selecciona tu servicio</label>
+            <select id="servicio" name="servicio" required><option value="">Cargando servicios…</option></select>
+          </div> 
+          
+          <div class="fila-inputs">
+            <div class="grupo-input"><label for="fecha">Fecha</label><input type="date" id="fecha" required></div>
+            <div class="grupo-input"><label for="hora">Hora</label><select id="hora" required disabled><option value="">Selecciona una fecha y servicio</option></select></div>
+          </div>
+          
+          <button type="submit" class="btn-reserva-form" disabled>Confirmar Reserva</button>
+          <p id="estado-reserva" role="status" aria-live="polite">Conectando con el salón…</p><p class="texto-privacidad">Usaremos tus datos de contacto para gestionar esta reserva.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       🧠 NUEVA VENTANA FLOTANTE DEL ESCÁNER IA 
+       ========================================== -->
+  <!-- 🌟 SU MOTOR LÓGICO DE JAVASCRIPT 🌟 -->
+  <script type="module" src="{% static 'entrechicas/js/script.js' %}"></script>
+  <script src="{% static 'entrechicas/js/index-extra-1.js' %}"></script>
+<dialog id="detalle-plan" aria-labelledby="detalle-titulo">
+  <form method="dialog"><button class="cerrar-plan" aria-label="Cerrar propuesta">Cerrar ×</button></form>
+  <p class="planes-nota">Propuesta para salones · Proyecto de título</p>
+  <h2 id="detalle-titulo"></h2><p id="detalle-precio" class="plan-precio"></p>
+  <p id="detalle-descripcion"></p><label id="modalidad-propuesta-label" for="modalidad-propuesta">¿Qué ofrecerá tu negocio?</label><select id="modalidad-propuesta"><option value="servicios">Servicios y citas</option><option value="cosmeticos">Solo cosméticos</option><option value="mixto">Servicios + cosméticos</option></select><p id="detalle-pendiente"></p>
+  <p class="planes-nota">Los planes se presentan como propuesta académica; esta versión no contrata suscripciones. El piloto no genera cobros ni activa una suscripción comercial. Los impuestos y condiciones se definirán antes de contratar.</p>
+  <a id="elegir-plan" class="enlace-economia" href="/admin.html">Acceder a la administración →</a><br><button type="button" id="descargar-propuesta">Descargar propuesta (.txt)</button>
+</dialog>
+<script src="{% static 'entrechicas/js/planes.js' %}" defer></script>
+<script type="module" src="{% static 'entrechicas/js/reservas-publicas.js' %}"></script>
+<script type="module" src="{% static 'entrechicas/js/salon-contexto.js' %}"></script>
+</body>
+</html>

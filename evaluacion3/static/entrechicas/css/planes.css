@@ -1,0 +1,42 @@
+#servicios [hidden] { display:none!important; }
+.planes-selector { display:flex; gap:8px; padding:5px; border-radius:30px; background:#eadff0; margin:0 0 18px; }
+.planes-selector button { flex:1; border:0; border-radius:24px; padding:12px; color:#523863; background:transparent; cursor:pointer; font:inherit; }
+.planes-selector button[aria-pressed="true"] { background:#65417d; color:white; box-shadow:0 3px 10px #65417d22; }
+#servicios .planes-intro { font-size:15px; line-height:1.55; margin:0 0 10px; }
+#servicios .planes-nota,.planes-nota { font:12px/1.5 system-ui,sans-serif; color:#6d5d74; margin:10px 0; }
+.plan-fila { display:flex; align-items:center; gap:12px; justify-content:space-between; background:#fff; border:1px solid #e7d8ec; padding:14px 16px; margin:10px 0; border-radius:18px; }
+.plan-fila h3 { font:600 20px/1.2 Georgia,serif; margin:0 0 4px; color:#3c2847; }
+#servicios .plan-fila p { font:13px/1.4 system-ui,sans-serif; margin:5px 0; }
+#servicios .plan-fila .plan-precio,.plan-precio { font:600 22px/1.3 system-ui,sans-serif; color:#65417d; }
+.plan-precio small { font-size:12px; font-weight:400; }
+.plan-estado { font:11px/1.4 system-ui,sans-serif; color:#6c5478; }
+.plan-destacado { border-color:#9b76b6; background:#faf5ff; }
+.plan-fila button,#descargar-propuesta { border:1px solid #65417d; border-radius:20px; background:#65417d; color:white; padding:10px 13px; cursor:pointer; flex-shrink:0; font:13px system-ui,sans-serif; }
+.enlace-economia { display:inline-block; color:#65417d; font:600 14px/1.5 system-ui,sans-serif; padding:6px 0; }
+#detalle-plan { box-sizing:border-box; width:min(92vw,550px); max-height:85vh; overflow:auto; border:1px solid #dac9e4; border-radius:24px; padding:30px; color:#3e3045; font:16px/1.6 system-ui,sans-serif; }
+#detalle-plan::backdrop { background:#25162b99; }
+.cerrar-plan { display:block; margin-left:auto; border:0; background:transparent; color:#65417d; padding:8px; cursor:pointer; }
+.planes-selector button:focus-visible,.plan-fila button:focus-visible,#detalle-plan button:focus-visible { outline:3px solid #c59352; outline-offset:3px; }
+#servicios.vista-negocio .titulo-dentro-tarjeta { font-size:clamp(30px,3vw,45px); margin-bottom:16px; }
+#servicios.vista-negocio .lado-contenido { padding:24px; }
+/* Los planes se leen con scroll normal: no fijar una tarjeta más alta que la pantalla. */
+#servicios.vista-negocio { min-height:0; }
+#servicios.vista-negocio .tarjeta-servicios-estatica { position:relative; top:auto; }
+@media(max-width:430px) { .plan-fila { align-items:flex-start; flex-direction:column; } }
+/* Hoja económica independiente del catálogo del salón. */
+body.economia { margin:0; background:#f9f5fa; color:#382d3e; font:16px/1.6 system-ui,sans-serif; }
+.economia main { max-width:1080px; margin:auto; padding:36px 22px 70px; }
+.economia a { color:#65417d; }
+.economia h1 { font:clamp(32px,5vw,56px)/1.15 Georgia,serif; max-width:800px; }
+.economia h2 { font:28px/1.2 Georgia,serif; }
+.economia .etiqueta { color:#78538e; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+.economia .bloque { padding:24px; border:1px solid #e6d9ec; background:white; border-radius:22px; margin:22px 0; }
+.economia .campos { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.economia label { display:block; font-size:14px; }
+.economia input { display:block; box-sizing:border-box; width:100%; padding:12px; border:1px solid #baa7c7; border-radius:10px; font:inherit; background:#fff; color:#382d3e; }
+.economia .resultados { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.economia .dato { border-radius:14px; padding:18px; background:#f1e8f6; }
+.economia .dato strong { display:block; font-size:24px; }
+.economia .nota { font-size:13px; color:#6d5d74; }
+.economia button { padding:12px 18px; border:0; border-radius:22px; background:#65417d; color:white; font:inherit; cursor:pointer; }
+@media(max-width:650px) { .economia .campos,.economia .resultados { grid-template-columns:1fr; } }

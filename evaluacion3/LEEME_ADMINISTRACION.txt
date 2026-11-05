@@ -1,0 +1,34 @@
+ADMINISTRACIÓN ENTRE CHICAS
+
+Archivos del tema administrativo:
+- templates/admin/base_site.html
+- static/entrechicas/css/admin.css
+- Este archivo de instrucciones.
+
+Para aplicar el diseño a tu proyecto actual, extrae el ZIP en una carpeta aparte
+ y copia los dos archivos indicados a las mismas rutas de tu proyecto.
+No necesitas reemplazar db.sqlite3, reinstalar dependencias ni ejecutar migraciones.
+
+Reinicia el servidor si Django no detecta la plantilla nueva:
+python manage.py runserver
+
+Abre http://127.0.0.1:8000/admin/ en Chrome y actualiza con Ctrl+F5.
+El acceso tendrá fondo claro, colores lila y rosa, y la marca Entre Chicas.
+El panel interior conserva sus controles y adopta los colores de la marca.
+
+ACCESO
+Usa el nombre de usuario y contraseña de tu superusuario existente.
+No se ha creado ni cambiado ninguna cuenta o contraseña.
+
+Si todavía no creaste el administrador, con tu entorno virtual activado ejecuta:
+python manage.py createsuperuser
+
+Elige un usuario (por ejemplo, javier), tu correo y una contraseña propia.
+La contraseña no se muestra al escribir en la terminal.
+En el formulario web debes escribir el nombre de usuario, no el correo.
+
+Si olvidaste la contraseña de javier:
+python manage.py changepassword javier
+
+El tema fue comprobado en navegador junto con las funciones principales.
+Consulta REVISION_Y_PRUEBAS.md para las correcciones y la instalación de esta actualización.
