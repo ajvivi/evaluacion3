@@ -1,0 +1,36 @@
+
+    .contenedor-espejo-magico {
+      margin-top: 25px; 
+      position: relative; /* 🛡️ Protege su posición */
+      z-index: 10;        /* 🛡️ Lo pone por encima del video */
+    }
+
+    .btn-espejo-magico {
+      /* Un degradado de colores moderno */
+      background: linear-gradient(45deg, #ff6b6b, #c06c84, #6c5b7b, #355c7d);
+      background-size: 300% 300%;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none; 
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: inline-block;
+      animation: brillar 5s ease infinite; 
+      transition: transform 0.3s ease;
+    }
+
+    .btn-espejo-magico:hover {
+      transform: scale(1.05); 
+      color: white;
+    }
+
+    @keyframes brillar {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  
+.enlaces{flex-wrap:wrap;justify-content:center;gap:18px}
+@media(max-width:768px){.navegacion{flex-wrap:wrap;gap:18px}.enlaces{padding:0;max-width:100%;gap:14px}}

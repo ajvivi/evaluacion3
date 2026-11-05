@@ -1,24 +1,23 @@
-"""
-URL configuration for entrechicas project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path,include
-
+from django.urls import path, include
+from django.views.generic import RedirectView
+from appentrechicas1 import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('appentrechicas1/', include('appentrechicas1.urls')),
-    path('appentrechicas2/', include('appentrechicas2.urls')),
+    path('admin/',admin.site.urls),
+    path('admin.html',RedirectView.as_view(url='/admin/',permanent=False)),
+    path('html/admin.html',RedirectView.as_view(url='/admin/',permanent=False)),
+    path('appentrechicas1/',include('appentrechicas1.urls')),
+    path('appentrechicas2/',include('appentrechicas2.urls')),
+    path('api/ayuda/config',views.ayuda_config),
+    path('api/publico/<slug:slug>',views.info),
+    path('api/publico/<slug:slug>/acceso',views.acceso),
+    path('api/publico/<slug:slug>/productos',views.productos),
+    path('api/publico/<slug:slug>/horarios',views.horarios),
+    path('api/publico/<slug:slug>/reservas',views.reservas),
+    path('api/publico/<slug:slug>/pedidos',views.pedidos),
+    path('api/publico/<slug:slug>/ayuda',views.ayuda),
+    path('manifest.json',RedirectView.as_view(url='/static/entrechicas/manifest.json',permanent=False)),
+    path('',views.page,name='inicio'),
+    path('<str:nombre>.html',views.page),
+    path('html/<str:nombre>.html',views.page),
 ]

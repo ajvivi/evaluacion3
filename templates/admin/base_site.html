@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | Entre Chicas{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'entrechicas/css/admin.css' %}?v=1">
+{% endblock %}
+
+{% block branding %}
+<div class="marca-entrechicas">
+    <a href="{% url 'admin:index' %}">Entre Chicas</a>
+    <span>Tu espacio de belleza y bienestar</span>
+</div>
+{% endblock %}

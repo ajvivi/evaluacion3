@@ -1,0 +1,3 @@
+#canvas{transform:none}.panel select{display:block;width:100%;padding:12px;border-radius:10px;border:1px solid #d6b8c3;font:inherit;background:white;color:#513678}.panel input[type=color]{width:100%;height:44px;border:1px solid #d6b8c3;border-radius:10px;background:white}.panel .check{display:block;font-size:14px;line-height:1.5;margin:18px 0}.panel .check input{width:auto}#status{min-height:3em}.empty[hidden]{display:none}
+
+[hidden]{display:none!important}#nail-adjustments input[type=range]{width:100%}#nail-adjustments button{width:100%;min-height:44px}#nail-adjustments{overflow-wrap:anywhere}#nail-adjustments label{font-size:.92rem}.panel{min-width:0}@media(max-width:740px){.actions button{flex:1;min-height:44px}.layout{grid-template-columns:minmax(0,1fr)}}
