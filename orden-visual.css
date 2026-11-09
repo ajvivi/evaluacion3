@@ -1,0 +1,58 @@
+/* Ritmo visual compartido: portada, tienda y formularios. */
+:root{--ec-purple:#674780;--ec-ink:#392845;--ec-border:#e8ddeb}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+.pantalla-fondo{background:linear-gradient(110deg,#fcf7fbe8,#f6eef8ba)}
+.pantalla-fondo .navegacion{margin-bottom:24px}
+.pantalla-fondo .enlaces a{text-shadow:none}
+.pantalla-fondo .contenido-hero{gap:56px}
+.pantalla-fondo .btn-espejo-magico{animation:none;background:#ffffffd9;color:var(--ec-purple);border:1px solid #d7c5e1;border-radius:16px;box-shadow:none;min-height:64px;font-weight:600}
+.pantalla-fondo .btn-espejo-magico:hover{background:#f0e5f5;border-color:#9875ad}
+.pantalla-fondo .datos-derechos{border-left:1px solid #d9c7e1;padding-left:30px}
+.pantalla-fondo .dato h3{font-size:32px}
+.pantalla-fondo .dato p{line-height:1.6}
+.ec-eyebrow{display:block;color:var(--ec-purple);font:700 11px/1.5 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.ec-probadores{font:600 13px/1.5 system-ui,sans-serif;color:#674780;margin:28px 0 -12px}
+.pagina-tienda{background:#fcf9fc;color:var(--ec-ink)}
+.tienda-cabecera{align-items:center;flex-wrap:wrap;padding:6px 0 22px;gap:14px}
+.tienda-marca{font:28px/1.2 Georgia,serif!important;color:var(--ec-purple)!important}
+.tienda-menu{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.tienda-menu a{padding:10px 0}
+.tienda-menu [aria-current=page]{border-bottom:2px solid var(--ec-purple)}
+.tienda-hero{margin:26px 0 30px;padding:38px 40px;border:1px solid var(--ec-border);border-radius:24px;background:linear-gradient(110deg,#f2e8f6,#fcecf1);position:relative}
+.tienda-hero h1{max-width:600px;font-size:clamp(32px,4vw,48px);letter-spacing:-.035em}
+.tienda-hero p{max-width:600px}
+.tienda-pasos{display:flex;gap:10px 26px;list-style:none;padding:16px 0 0;margin:16px 0 0;border-top:1px solid #ddcbdf;flex-wrap:wrap;font-size:13px;color:#674780}
+.tienda-pasos strong{display:inline-grid;place-items:center;border:1px solid #cbb3d7;border-radius:50%;width:24px;height:24px;margin-right:7px;font-size:11px}
+.tienda-catalogo-titulo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.tienda-catalogo-titulo h2{font:30px/1.2 Georgia,serif;margin:0}
+.tienda-catalogo-titulo span{font-size:12px;color:#796382}
+.tienda-busqueda{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);padding:18px;background:#fff;border:1px solid var(--ec-border);border-radius:16px;gap:8px 16px}
+.tienda-busqueda .filtro{min-width:0}
+.tienda-busqueda label{display:block;margin-bottom:8px}
+.tienda-busqueda input,.tienda-busqueda select{min-height:48px}
+#estado-tienda{font-size:13px;line-height:1.7;color:#796382;margin:16px 0}
+.productos-grid{gap:18px;margin-top:16px}
+.pagina-tienda .producto-card{border-color:var(--ec-border);padding:20px;gap:12px;border-radius:20px;box-shadow:0 8px 30px #67478008}
+.pagina-tienda .producto-card h3{font-size:23px;line-height:1.25}
+.producto-imagen{aspect-ratio:1.65;background:linear-gradient(135deg,#f5edf8,#fceff4);border:1px solid #f0e4f1;color:#93749d}
+.pagina-tienda .producto-card button{min-height:46px;font:600 13px/1.4 system-ui,sans-serif}
+.tienda-distribucion .tienda-carrito{background:#fff;border-radius:20px;box-shadow:0 10px 30px #67478008}
+.tienda-carrito h2{margin:10px 0 20px}
+.tienda-carrito label{font-weight:600;font-size:13px;margin:16px 0 7px}
+.tienda-carrito input{min-height:46px;font:inherit}
+.carrito-vacio{padding:20px 16px;border:1px dashed #d9c7e2;border-radius:12px;background:#faf6fc;color:#796382;font-size:13px;text-align:center}
+.tienda-carrito #enviar-pedido{min-height:48px;font-weight:600}
+.tienda-carrito #enviar-pedido:disabled{opacity:1;background:#e9e0ee;color:#786283;border-color:#e9e0ee}
+.tienda-ayuda{color:#705b79;font-size:12px!important}
+.tienda-pie{border-top:1px solid var(--ec-border);margin-top:48px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#796382}
+.tienda-pie a{color:var(--ec-purple)}
+.pagina-tienda :is(a,button,input,select):focus-visible{outline:3px solid #9e6fb5;outline-offset:3px}
+html[data-tema=oscuro] .pantalla-fondo{background:#211927df}
+html[data-tema=oscuro] .pantalla-fondo .btn-espejo-magico{background:#302239;color:#f0e3f5;border-color:#72577f}
+html[data-tema=oscuro] :is(.tienda-hero,.tienda-busqueda,.tienda-distribucion .tienda-carrito){background:#2b2132;color:#f0e3f5;border-color:#5c4469}
+html[data-tema=oscuro] :is(.ec-eyebrow,.ec-probadores,.tienda-marca,.tienda-menu a,.tienda-pasos,#estado-tienda,.tienda-catalogo-titulo span,.tienda-ayuda,.tienda-pie,.tienda-pie a){color:#dfc7eb!important}
+html[data-tema=oscuro] :is(.carrito-vacio,.producto-imagen){background:#35273f;color:#dfc7eb;border-color:#614a6f}
+html[data-tema=oscuro] .tienda-carrito input{background:#211a27;color:#f3e9f8;border-color:#72577f}
+@media(max-width:1000px){.pantalla-fondo .datos-derechos{border-left:0;border-top:1px solid #d9c7e1;padding:24px 0 0}.pantalla-fondo .contenido-hero{gap:32px}}
+@media(max-width:550px){.tienda-hero{padding:26px 20px;margin:22px 0 26px}.tienda-busqueda{grid-template-columns:1fr}.tienda-menu{gap:18px}.tienda-marca{font-size:25px!important}.tienda-pasos{gap:12px;font-size:12px}.tienda-pasos strong{width:21px;height:21px}.tienda-catalogo-titulo{align-items:center}.tienda-catalogo-titulo h2{font-size:26px}.pantalla-fondo .dato h3{font-size:18px}.tienda-distribucion .tienda-carrito{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

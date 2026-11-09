@@ -1,0 +1,54 @@
+:root{color-scheme:light}
+.theme-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:9px;width:100%;box-sizing:border-box;margin:0 0 18px;position:relative;z-index:12;font:500 12px/1.5 system-ui,sans-serif;color:#654d70}
+.theme-toolbar label{display:inline;margin:0;font:inherit;color:inherit;width:auto}
+.theme-toolbar select{width:auto;min-width:106px;padding:8px 30px 8px 12px;border:1px solid #d8c8df;border-radius:20px;background:#fff;color:#654d70;font:600 12px/1.5 system-ui,sans-serif;cursor:pointer}
+.theme-toolbar select:focus-visible{outline:3px solid #9970b1;outline-offset:3px}
+html[data-tema=oscuro]{color-scheme:dark;--color-primario:#f0e5f6;--color-texto:#eee5f3;--dark-bg:#19151e;--dark-panel:#26202d;--dark-line:#4d3c58;--dark-text:#f0e7f6;--dark-muted:#c3b2ce}
+html[data-tema=oscuro] body{background:#19151e;color:var(--dark-text)}
+html[data-tema=oscuro] :is(h1,h2,h3,h4,.titulo-elegante,label,legend){color:var(--dark-text)}
+html[data-tema=oscuro] :is(p,.note,.hint,.eyebrow,.brand,.step,.etiqueta,.lista-texto-simple li,.lista-texto-simple b){color:var(--dark-muted)}
+html[data-tema=oscuro] a{color:#dbb9ef}
+html[data-tema=oscuro] :is(input:not([type=range]):not([type=checkbox]):not([type=radio]):not([type=color]),select,textarea){background:#211a27;color:var(--dark-text);border-color:var(--dark-line)}
+html[data-tema=oscuro] :is(button,.button){background:#302437;color:var(--dark-text);border-color:var(--dark-line)}
+html[data-tema=oscuro] :is(button.primary,.button.primary,.btn-reserva,.btn-accion,.btn-reserva-form){background:#79528e;color:#fff}
+html[data-tema=oscuro] :is(.card,.panel,.plan-fila,.modal-contenido,#detalle-plan,#pago-dialog){background:var(--dark-panel);color:var(--dark-text);border-color:var(--dark-line);box-shadow:0 8px 30px #00000024}
+html[data-tema=oscuro] .theme-toolbar{color:var(--dark-muted)}
+html[data-tema=oscuro] .theme-toolbar select{background:#26202d;color:#f0e7f6;border-color:#71547f}
+/* Portada y secciones públicas; no se aplican filtros a imágenes ni al video. */
+html[data-tema=oscuro] .pantalla-fondo{background:linear-gradient(90deg,#19151e99,#19151e26)}
+html[data-tema=oscuro] .pantalla-fondo :is(.logo,.enlaces a,.texto-izquierdo h1,.texto-izquierdo p,.dato h3,.dato p){color:#fff;text-shadow:0 2px 5px #19151e}
+html[data-tema=oscuro] .pantalla-fondo .navegacion{border-color:#ffffff30}
+html[data-tema=oscuro] :is(.seccion-servicios,.seccion-nosotros,.seccion-reservas){background:#19151e}
+html[data-tema=oscuro] :is(.tarjeta-servicios-grande,.tarjeta-nosotros-grande,.lado-contenido){background:#26202d;color:var(--dark-text)}
+html[data-tema=oscuro] :is(.lado-contenido p,.lado-contenido .planes-nota){color:var(--dark-muted)}
+html[data-tema=oscuro] #catalogo-publico li{background:#34293d;border-color:var(--dark-line);color:var(--dark-text)}
+html[data-tema=oscuro] #catalogo-publico :is(b,.precio-tag){color:#eee2f5}
+html[data-tema=oscuro] .planes-selector{background:#392a43}
+html[data-tema=oscuro] .planes-selector button{background:transparent;color:#e2c9ee}
+html[data-tema=oscuro] .planes-selector button[aria-pressed=true]{background:#79528e;color:#fff}
+html[data-tema=oscuro] .plan-fila :is(h3,p,.plan-precio,.plan-estado){color:var(--dark-text)}
+html[data-tema=oscuro] .plan-fila button{background:#79528e;color:white}
+/* Probadores: conservar exactamente los tonos de esmalte, labial y los lienzos. */
+html[data-tema=oscuro] .probador .layout>section{background:#26202d;border-color:#4d3c58}
+html[data-tema=oscuro] .studio-top{border-color:#4d3c58}
+html[data-tema=oscuro] :is(.studio-name,.probador .panel h2,.probador .panel output){color:#f0e7f6}
+html[data-tema=oscuro] :is(.probador header p,.probador .panel label,.probador .note,.probador .status,.probador #status,.probador summary,.probador .brand){color:#cdb9d9}
+html[data-tema=oscuro] .studio-nav{background:#26202d;border-color:#4d3c58}
+html[data-tema=oscuro] .studio-nav a{color:#dbb9ef}
+html[data-tema=oscuro] .studio-nav a:hover{background:#3a2b44}
+html[data-tema=oscuro] .studio-nav a[aria-current=page]{background:#79528e;color:#fff}
+html[data-tema=oscuro] .probador .compare{background:#34283d;color:#f0e7f6}
+html[data-tema=oscuro] .probador .tone{background:var(--tone);border-color:#26202d}
+html[data-tema=oscuro] .probador details{border-color:#4d3c58}
+html[data-tema=oscuro] :is(#camera-panel,#viewport){background:#211a27;border-color:#4d3c58}
+html[data-tema=oscuro] :is(#status,#mensaje,.pay-summary,.stats>div,.bar,#resultado-pago){background:#302437;color:#eee2f5;border-color:#4d3c58}
+html[data-tema=oscuro] .probador #status{background:transparent}
+html[data-tema=oscuro] body>header{background:#26202d;border-color:#4d3c58}
+html[data-tema=oscuro] :is(td,th,.service-row){border-color:#4d3c58}
+html[data-tema=oscuro] :is(.demo-badge,.service-actions .service-show){background:#382842;color:#e2c4f4;border-color:#77558b}
+html[data-tema=oscuro] .service-actions .service-hide{background:#34232d;color:#ffccd9;border-color:#996276}
+html[data-tema=oscuro] .payment-state.aprobado{color:#93ddb9}
+html[data-tema=oscuro] .payment-state.rechazado{color:#ffb8b8}
+html[data-tema=oscuro] :is(.economia .dato,.economia article,.economia .supuestos){background:#26202d;color:#f0e7f6;border-color:#4d3c58}
+html[data-tema=oscuro] input[type=range],html[data-tema=oscuro] input[type=checkbox]{accent-color:#b88bce}
+@media(max-width:520px){.theme-toolbar{margin-bottom:14px}.theme-toolbar select{min-height:40px}}

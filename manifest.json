@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Entre Chicas Salón",
+  "short_name": "Entre Chicas",
+  "description": "Reservas, servicios y probadores virtuales de belleza",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfbfa",
+  "theme_color": "#6a4c9c",
+  "icons": [
+    {
+      "src": "/static/entrechicas/assets/imagenes/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/entrechicas/assets/imagenes/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/"
+}
